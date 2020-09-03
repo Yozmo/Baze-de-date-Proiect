@@ -5,7 +5,7 @@
 
   <div mat-dialog-content class="centers-table">
     <div class="row">
-      <div class="col-6 info">
+      <div class="col-6" [ngClass]="{'info' : title === 'Editati informatiile din centru'}">
         <mat-form-field>
           <input matInput placeholder="Oras" formControlName="city">
         </mat-form-field>
