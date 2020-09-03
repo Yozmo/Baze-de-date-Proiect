@@ -20,7 +20,7 @@ unei farmacii.
         username: admin@pharmacy.ro
         password: admin
     - cu rol de customer:
-        username: catena@gmail.com  
+        username: catena@gmail.com
         password: customer
   
   * pentru a pornii aplicatia:
