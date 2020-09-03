@@ -2,7 +2,7 @@
 
  * Tehnologiile folosite la dezvoltarea aplicatiei au fost:
     - pentru partea de backend:
-        Spring Boot
+        Spring Boot,
         PostgreSQL
     - pentru partea de frontend: 
         Angular
