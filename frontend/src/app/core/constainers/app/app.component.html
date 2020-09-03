@@ -1,0 +1,43 @@
+<app-layout>
+  <app-toolbar *ngIf="loggedIn$ | async" (openMenu)="openSidenav()">
+<!--    <div class="branding">-->
+<!--      <img alt="" class="logo" src="assets/images/pharmacy-white.svg" alt="Pharmacy">-->
+<!--    </div>-->
+    <button mat-button class="burger-menu-toggle" (click)="burgerShow = !burgerShow">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="menu-items" [class.show-menu]="burgerShow">
+      <app-nav-item (navigate)="closeSidenav()" *ngIf="(loggedIn$ | async)" link="admin">
+        Administrare
+      </app-nav-item>
+      <app-nav-item (navigate)="closeSidenav()" *ngIf="(loggedIn$ | async)" link="suppliers">
+        Furnizori
+      </app-nav-item>
+
+      <app-user-controls (logout)="logout()" (editProfile)="editUserProfile()" *ngIf="loggedIn$ | async" class="user-actions mobile">
+        Logout
+      </app-user-controls>
+    </div>
+    <div class="language-avatar">
+      <div class="avatar-info">
+        <figure *ngIf="loggedUser$ | async as account" class="name user-image user-tn">
+          <img alt="" class="menu-toggle" *ngIf="account.profilePicture" [src]="account.profilePicture" />
+        </figure>
+        <button class="user-avatar-mobile" mat-button [matMenuTriggerFor]="menu">
+          {{(loggedUser$ | async)?.name}}
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu class="user-mobile-menu" #menu="matMenu">
+          <app-user-controls (logout)="logout()" (editProfile)="editUserProfile()" *ngIf="loggedIn$ | async">
+            Logout
+          </app-user-controls>
+        </mat-menu>
+      </div>
+    </div>
+  </app-toolbar>
+
+  <main class="content-area">
+    <router-outlet></router-outlet>
+  </main>
+</app-layout>

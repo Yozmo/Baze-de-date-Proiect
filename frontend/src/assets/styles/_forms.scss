@@ -1,0 +1,362 @@
+@import 'mixins';
+
+.form-section + .form-section {
+    margin-top: 30px;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.autocomplete-field {
+    .input-icon {
+        position: relative;
+        top: 6px;
+        right: -6px;
+        color: #AEB2BD; // TODO: color
+    }
+
+    .mat-icon-button {
+        top: 3px;
+        right: -9px;
+    }
+}
+
+.custom-input {
+    .dummy {
+        display: none;
+    }
+
+    .real-input {
+        background: transparent;
+        border: none;
+        width: 100%;
+        outline: none;
+        color: currentColor;
+        font: inherit;
+    }
+}
+
+
+button {
+
+    &[icon-only] {
+        padding: 0;
+        min-width: 30px;
+        width: 30px;
+        height: 30px;
+        line-height: 13px;
+        margin-left: 10px;
+    }
+
+    &[btn-link] {
+        background: transparent;
+        border: none;
+        color: #AEB2BD; // TODO: Color
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .mat-select {
+        .mat-select-value {
+            display: none;
+        }
+        .mat-select-trigger {
+            position: relative;
+            top: -2px;
+        }
+    }
+
+}
+
+.mat-raised-button {
+    font-size: 12px;
+    font-weight: bold;
+    color: $pharmacy-main-text-color;
+    background-color: #B2B7C5; // TODO: Color
+    text-transform: uppercase;
+    line-height: 46px;
+    padding: 0 27px;
+
+    &:hover,
+    &:focus {
+        background-color: #CCD0D9;
+    }
+
+    &:not([class*=mat-elevation-z]) {
+        box-shadow: 0 3px 6px rgba(#000000, 0.16);
+    }
+
+    &.mat-primary {
+        color: #fff;
+        background-color: $pharmacy-secondary-color;
+    }
+
+    .mat-button-wrapper {
+        .mat-icon {
+            margin-top: -2px;
+            margin-right: 3px;
+            font-size:   16px;
+            height:      15px;
+            line-height: 15px;
+            width:       16px;
+        }
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: rgba($pharmacy-main-grey-color, 0.45);
+}
+
+.mat-checkbox-frame {
+    border-color: rgba($pharmacy-main-grey-color, 0.5);
+}
+
+.inline-checkboxes {
+    margin-left: -10px;
+    margin-right: -10px;
+
+    .mat-checkbox {
+        margin: 0 10px;
+    }
+}
+
+.mat-form-field {
+    font-weight: bold;
+
+    &[floatLabel=hidden] {
+        .mat-form-field-infix {
+            padding-top: 0;
+            border-top: none;
+        }
+    }
+}
+
+.mat-form-group {
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    .mat-form-field {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+.mat-radio-group {
+    padding-bottom: 1.25em;
+
+    .mat-radio-button ~ .mat-radio-button {
+        margin-left: 16px;
+    }
+
+    &.list {
+        .mat-radio-button {
+            margin-left: 0;
+            display: block;
+        }
+    }
+}
+
+.pharmacy-mat-checkbox-group {
+    padding-bottom: calc(1.25em - 4px);
+}
+
+div[class^=col] {
+    .mat-form-field {
+        width: 100%;
+    }
+}
+
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow,
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: $pharmacy-main-text-color;
+}
+
+
+.mat-form-field.mat-form-field-appearance-fill {
+    font-size: 14px;
+    font-weight: 600;
+    color: $pharmacy-main-text-color;
+
+    .mat-form-field-underline { display: none; }
+
+    .mat-form-field-flex {
+        background-color: #FFF;
+        border-radius: 4px;
+        // box-shadow: inset 0 0 0 1px rgba($pharmacy-darker-grey-color, 0.4);
+        transition: box-shadow 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        padding: 10px 14px 0;
+
+        .mat-form-field-infix {
+            border-top-width: 1em;
+            padding-top: 0.35em;
+        }
+    }
+
+    &.mat-form-field-can-float.mat-form-field-should-float {
+        .mat-form-field-label {
+            color: inherit;
+            transform: scale(1) translateY(-0.59373em);
+            width: 100%;
+        }
+    }
+
+    .mat-input-element,
+    .mat-select-value {
+        opacity: 0.7;
+
+        @include pharmacy-input-placeholder {
+            color: $pharmacy-main-text-color; //#CFD0D5
+            opacity: 0.4;
+        }
+    }
+
+    .mat-select-value {
+        line-height: 21px;
+    }
+
+    .mat-select-arrow-wrapper {
+        transform: translateY(0);
+    }
+
+    .mat-input-element.cdk-textarea-autosize {
+        line-height: 18px;
+        margin-top: 4px;
+    }
+
+    .mat-form-field-required-marker {
+        display: none;
+    }
+
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+        .mat-icon {
+            margin-left:  auto;
+            margin-right: auto;
+        }
+    }
+
+
+    /* // Custom required marker
+    // .mat-form-field-required-marker {
+    //     color: transparent;
+    //     // position: absolute;
+    //     // right: -20px;
+
+    //     &::after {
+    //         content: "obligatoriu";
+    //         color: $pharmacy-main-text-color;
+    //         opacity: 0.5;
+    //         //font-weight: normal;
+    //     }
+    // }
+    //
+    // .mat-form-field-label,
+    // .mat-form-field-label-wrapper { // To make custom required marker be visible
+    //     overflow: visible;
+    // } */
+
+
+
+    /* FIELD STATES */
+
+    &.mat-form-field-invalid,
+    &.ng-invalid {
+        color: $pharmacy-secondary-color;
+
+        .mat-form-field-flex {
+            // box-shadow: inset 0 0 0 1px rgba($pharmacy-secondary-color, 0.4);
+            border: 1px solid rgba($pharmacy-secondary-color, 0.4);
+        }
+    }
+
+    &.mat-focused,
+    &.mat-focused:hover {
+        .mat-form-field-flex {
+            box-shadow: inset 0 0 0 1px  $pharmacy-secondary-color;
+        }
+    }
+
+    &:hover {
+        .mat-form-field-flex {
+            box-shadow: inset 0 0 0 1px rgba($pharmacy-secondary-color, 0.4);
+        }
+    }
+
+
+
+    /* Checkboxes and radios */
+
+    &.checkbox,
+    &.radio {
+        .mat-form-field-flex {
+            background-color: transparent;
+            box-shadow: none;
+
+            .mat-form-field-infix {
+                padding-top: 0.8em;
+            }
+
+            .mat-checkbox-layout,
+            .mat-radio-label {
+                font-weight: normal;
+            }
+        }
+
+        .ng-invalid ~ .mat-form-field-label-wrapper {
+            color: $pharmacy-secondary-color;
+        }
+
+        &[floatLabel=never] {
+            .mat-form-field-infix {
+                padding-top: 0;
+                border-top: none;
+            }
+        }
+    }
+
+    // ngx-mat-drp & {
+    //     .mat-form-field-flex {
+    //         padding-top: 5px;
+    //     }
+    //     .mat-form-field-infix {
+    //         border: none;
+    //         padding-top: 0;
+    //     }
+    //     .mat-form-field-suffix {
+    //         display: none;
+    //     }
+    // }
+
+    &.mat-paginator-page-size-select {
+        width: 74px;
+    }
+}
+
+/* Date picker */
+// .ngx-mat-drp-date-input {
+//     color: $pharmacy-main-text-color !important;
+//     font-size: 14px;
+//     text-overflow: initial !important;
+//     letter-spacing: -1px;
+// }
+
+mat-pick-range::ng-deep {
+    .mat-form-field-infix {
+        min-width: 166px;
+    }
+}

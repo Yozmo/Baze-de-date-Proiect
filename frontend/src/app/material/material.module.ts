@@ -1,0 +1,65 @@
+import { NgModule } from '@angular/core';
+
+import {
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatTabsModule,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatProgressSpinnerModule,
+  MatListModule,
+  MatDialogModule,
+  MatChipsModule,
+  MatSlideToggleModule,
+  MatExpansionModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatCheckboxModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatAutocompleteModule,
+  MatSnackBarModule,
+  MatDatepickerModule,
+  MatMenuModule,
+} from '@angular/material';
+import { MatSelectFilterModule } from 'mat-select-filter';
+
+const matModules = [
+  MatTabsModule,
+  MatButtonModule,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatCardModule,
+  MatInputModule,
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatProgressSpinnerModule,
+  MatDialogModule,
+  MatChipsModule,
+  MatSlideToggleModule,
+  MatExpansionModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatCheckboxModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatAutocompleteModule,
+  MatSnackBarModule,
+  MatSelectFilterModule,
+  MatDatepickerModule,
+  MatMenuModule,
+];
+
+@NgModule({
+  imports: matModules,
+  exports: matModules,
+})
+export class MaterialModule { }

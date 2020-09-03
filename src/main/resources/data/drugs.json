@@ -1,0 +1,135 @@
+[
+	{
+		"name": "MITOXANTRON",
+		"quantity": 1,
+		"strength": "10 mg",
+		"price": 2,
+		"description": "Description" 
+	},
+	{
+		"name": "FLECAINID",
+		"quantity": 50,
+		"strength": "100 mg",
+		"price": 4.5,
+		"description": "Description" 
+	},
+	{
+		"name": "AMIODARON",
+		"quantity": 20,
+		"strength": "200 mg",
+		"price": 3.5,
+		"description": "Description" 
+	},
+	{
+		"name": "NARATRIPTAN",
+		"quantity": 12,
+		"strength": "2.5 mg",
+		"price": 4,
+		"description": "Description" 
+	},
+	{
+		"name": "QUETIAPIN",
+		"quantity": 100,
+		"strength": "25 mg",
+		"price": 5,
+		"description": "Description" 
+	},
+	{
+		"name": "OLANZAPIN",
+		"quantity": 56,
+		"strength": "15 mg",
+		"price": 7,
+		"description": "Description" 
+	},
+	{
+		"name": "CITALOPRAM",
+		"quantity": 100,
+		"strength": "20 mg",
+		"price": 3,
+		"description": "Description" 
+	},
+	{
+		"name": "METOPROLOL",
+		"quantity": 50,
+		"strength": "50 mg",
+		"price": 4.5,
+		"description": "Description" 
+	},
+	{
+		"name": "CARVEDILOL",
+		"quantity": 30,
+		"strength": "12,5 mg",
+		"price": 6,
+		"description": "Description" 
+	},
+	{
+		"name": "SULPIRID",
+		"quantity": 50,
+		"strength": "200 mg",
+		"price": 8,
+		"description": "Description" 
+	},
+	{
+		"name": "ZOPICLON",
+		"quantity": 10,
+		"strength": "3,75 mg",
+		"price": 11,
+		"description": "Description" 
+	},
+	{
+		"name": "PANTOPRAZOL",
+		"quantity": 15,
+		"strength": "40 mg",
+		"price": 9,
+		"description": "Description" 
+	},
+	{
+		"name": "SIMVASTATIN",
+		"quantity": 80,
+		"strength": "50 mg",
+		"price": 6,
+		"description": "Description" 
+	},
+	{
+		"name": "DEXAMETHASON",
+		"quantity": 50,
+		"strength": "20 mg",
+		"price": 4.5,
+		"description": "Description" 
+	},
+	{
+		"name": "SULPIRID",
+		"quantity": 50,
+		"strength": "200 mg",
+		"price": 7.5,
+		"description": "Description" 
+	},
+	{
+		"name": "METFORMIN",
+		"quantity": 180,
+		"strength": "500 mg",
+		"price": 15,
+		"description": "Description" 
+	},
+	{
+		"name": "CALCIUM",
+		"quantity": 120,
+		"strength": "400 mg",
+		"price": 10,
+		"description": "Description" 
+	},
+	{
+		"name": "PREDNI",
+		"quantity": 100,
+		"strength": "10 mg",
+		"price": 5,
+		"description": "Description" 
+	},
+	{
+		"name": "FLUPENTIXOL",
+		"quantity": 1,
+		"strength": "100 mg",
+		"price": 12,
+		"description": "Description" 
+	}	
+]

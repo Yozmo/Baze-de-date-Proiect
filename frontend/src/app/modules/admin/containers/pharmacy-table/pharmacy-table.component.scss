@@ -1,0 +1,56 @@
+@import 'variables';
+
+.table-toolbar {
+  display: flex;
+  flex-direction: column;
+
+  .group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    .action-buttons {
+      button{
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.mat-cell {
+  max-height: 65px;
+  margin: 0 8px;
+}
+.mat-header-cell {
+  margin: 0 8px;
+}
+
+.number,
+.name-cell {
+  color: $pharmacy-main-text-color;
+  font-weight: 700;
+
+}
+.order-id, .length, .key {
+  max-width: 80px;
+}
+
+.image,
+.name,
+.developed,
+.usage{
+  max-width: 120px;
+  img {
+    width: 70px;
+    height: auto;
+  }
+}
+
+.observations-ellipsis,
+.default-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: block;
+}
+

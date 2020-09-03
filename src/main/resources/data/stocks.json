@@ -1,0 +1,50 @@
+[
+	{
+		"centerId": 1,
+		"drugId": 1,
+		"nameOfStock": "MITOXANTRON Stock",
+		"totalQuantity": 50
+	},
+	{
+		"centerId": 1,
+		"drugId": 2,
+		"nameOfStock": "FLECAINID Stock",
+		"totalQuantity": 60
+	},
+	{
+		"centerId": 1,
+		"drugId": 3,
+		"nameOfStock": "AMIODARON Stock",
+		"totalQuantity": 100
+	},
+	{
+		"centerId": 2,
+		"drugId": 1,
+		"nameOfStock": "MITOXANTRON Stock",
+		"totalQuantity": 100
+	},
+	{
+		"centerId": 2,
+		"drugId": 2,
+		"nameOfStock": "FLECAINID Stock",
+		"totalQuantity": 100
+	},
+	{
+		"centerId": 3,
+		"drugId": 4,
+		"nameOfStock": "NARATRIPTAN Stock",
+		"totalQuantity": 50
+	},
+	{
+		"centerId": 3,
+		"drugId": 5,
+		"nameOfStock": "QUETIAPIN Stock",
+		"totalQuantity": 50
+	},
+	{
+		"centerId": 3,
+		"drugId": 6,
+		"nameOfStock": "OLANZAPIN Stock",
+		"totalQuantity": 100
+	}
+]

@@ -1,0 +1,209 @@
+@import 'variables';
+@import 'mixins';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+
+$form-padding: 42px;
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  &::before {
+    content: '';
+    //background: url('/assets/images/roof-bg-corner.png') left top no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::after {
+    content: '';
+    //background: url('/assets/images/math-bg-corner.png') right bottom no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.login-form {
+  padding: $form-padding;
+  padding-top: 0;
+  box-shadow: 0 3px 30px rgba(#ABB4C4, .15);
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  width: 500px;
+  height: 530px;
+
+  .pharmacy-decor {
+    fill: $pharmacy-main-color;
+    margin-right: -92px;
+    //margin-left: calc(#{$form-padding} / 2 * -1);
+    margin-bottom: calc(#{$form-padding} / 2);
+    margin-top: -50px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  mat-card-title {
+    text-align: center;
+  }
+
+  .login-error { // TODO: Style this
+    padding: 8px 15px;
+    color: $pharmacy-error-color;
+    font-weight: 600;
+    background-color: rgba($pharmacy-error-color, 0.08);
+    border-radius: 4px;
+    margin: 0;
+    margin-top: -22px;
+  }
+
+  .other-actions {
+    margin: 20px 0 40px;
+    color: $pharmacy-darker-grey-color;
+    font-weight: 600;
+
+    ul {
+      @include list-reset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        position: relative;
+        padding: 0 20px;
+      }
+
+      li:not(:first-child)::before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: $pharmacy-main-grey-color;
+        position: absolute;
+        left: 0;
+      }
+      button {
+        color: $pharmacy-darker-grey-color;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .login-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      line-height: 40px;
+      padding: 0 50px;
+    }
+  }
+
+  .frogot-password {
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    p {
+      color: $pharmacy-darker-grey-color;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    mat-form-filed {
+      margin-bottom: 20px;
+    }
+    .other-actions {
+      ul {
+        justify-content: center;
+        li {
+          // padding: 0;
+        }
+      }
+    }
+    .reset-buttons {
+      display: flex;
+      justify-content: center;
+      // margin-top: 20px;
+      text-align: center;
+      button {
+        line-height: 40px;
+        padding: 0 50px;
+      }
+    }
+  }
+}
+
+
+
+
+:host::ng-deep {
+  .mat-form-field-appearance-legacy .mat-form-field-label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label,
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: #999CA6;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 9px 0;
+  }
+
+  input.mat-input-element {
+    color: $pharmacy-main-text-color;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: rgba(#AEB2BD, .44);
+  }
+
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: transparent;
+    height: 1px;
+  }
+
+  .center-item {
+    margin-left: 160px;
+    margin-top: 55px !important;
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .login-centering-wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .login-form .pharmacy-decor {
+    margin-right: -62px;
+  }
+}
+

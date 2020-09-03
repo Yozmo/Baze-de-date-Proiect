@@ -1,0 +1,98 @@
+<div class="login-centering-wrapper">
+  <mat-card class="login-form reveal">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pill center-item" width="100" height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#4CAF50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <path d="M4.5 12.5l8 -8a4.94 4.94 0 0 1 7 7l-8 8a4.94 4.94 0 0 1 -7 -7" />
+      <line x1="8.5" y1="8.5" x2="15.5" y2="15.5" />
+    </svg>
+    <mat-card-content *ngIf="!showResetPassword">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="submit()"
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="username"
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Parola</mat-label>
+          <input
+            type="password"
+            matInput
+            formControlName="password"
+          >
+        </mat-form-field>
+        <p
+          *ngIf="errorMessage !== null && errorMessage !== undefined"
+          class="login-error"
+        >
+          {{ errorMessage?.error?.error_description }}
+        </p>
+        <div class="other-actions">
+          <ul>
+            <li>
+              <mat-checkbox formControlName="rememberMe">Reține-mă</mat-checkbox>
+            </li>
+            <li>
+              <button
+                type="button"
+                (click)="showResetPassword = !showResetPassword"
+              >
+                Am uitat parola
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="login-buttons">
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-content *ngIf="showResetPassword">
+      <form
+        class="frogot-password"
+        [formGroup]="forgotPasswordForm"
+      >
+        <p>
+          Introduceți adresa de e-mail pentru a recupera parola:
+        </p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="email"
+          >
+        </mat-form-field>
+        <p
+          *ngIf="errorMessage !== null && errorMessage !== undefined"
+          class="login-error"
+        >
+          {{ errorMessage?.error?.error_description }}
+        </p>
+        <div class="other-actions">
+          <ul>
+            <li>
+              <button
+                type="button"
+                (click)="showResetPassword = !showResetPassword"
+              >
+                Înapoi la Login
+              </button>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

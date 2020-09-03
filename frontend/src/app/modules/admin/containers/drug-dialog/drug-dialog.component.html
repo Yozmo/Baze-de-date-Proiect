@@ -1,0 +1,31 @@
+<form [formGroup]="drugForm">
+  <div mat-dialog-title>
+    <h2 class="title">{{ title }}</h2>
+  </div>
+
+  <div mat-dialog-content class="centers-table">
+      <mat-form-field>
+        <input matInput placeholder="Nume" formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Cantitate" formControlName="quantity">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Concentratie" formControlName="strength">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Pret" formControlName="price">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Descriere" formControlName="description">
+      </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onClick(drugForm.value)" [disabled]="!drugForm.valid">
+      Salveaza
+    </button>
+    <button mat-raised-button (click)="onClick()">Renunta</button>
+  </div>
+</form>
+

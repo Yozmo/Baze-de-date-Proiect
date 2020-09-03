@@ -1,0 +1,82 @@
+<div class="container-fluid table-scroll">
+  <mat-table
+    matSort
+    [dataSource]="suppliers$ | async"
+  >
+    <ng-container matColumnDef="name">
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        class="entity-col"
+      >
+        Nume
+      </mat-header-cell>
+      <mat-cell
+        *matCellDef="let supplier"
+        class="entity-col"
+      >
+        <div>
+          <div class="customer-name">{{supplier?.name}}</div>
+          <div
+            class="customer-contact"
+            *ngIf="supplier?.phone"
+          >
+            {{supplier?.phone}}
+          </div>
+          <div
+            class="customer-contact"
+            *ngIf="supplier?.email"
+          >
+            {{ supplier?.email }}
+          </div>
+        </div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="country">
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Tara
+      </mat-header-cell>
+      <mat-cell *matCellDef="let supplier">{{supplier?.country}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Oras
+      </mat-header-cell>
+      <mat-cell *matCellDef="let supplier">{{supplier?.city}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="county">
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Judet
+      </mat-header-cell>
+      <mat-cell *matCellDef="let supplier">{{supplier?.city}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="street">
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Strada
+      </mat-header-cell>
+      <mat-cell *matCellDef="let supplier">{{supplier?.street}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: displayedColumns;"
+      [class.disabled]="!row.enabled"
+    >
+    </mat-row>
+  </mat-table>
+  <mat-paginator
+    [pageSizeOptions]="[10, 25, 50, 100]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

@@ -1,0 +1,76 @@
+@import 'variables';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+
+
+/*
+ * Chrome/Webkit properties
+ */
+// ::-webkit-scrollbar             {/* entire scrollbar scope */}
+// ::-webkit-scrollbar-button      {/* directional buttons at the top and bottom of the scrollbar */}
+// ::-webkit-scrollbar-track       {/* space below the scrollbar */}
+// ::-webkit-scrollbar-track-piece {/* not covered area by the scrollbar-thumb */}
+// ::-webkit-scrollbar-thumb       {/* draggable scrollbar itself */}
+// ::-webkit-resizer               {/* resizser at the bottom of the scrollbar */}
+// ::-webkit-scrollbar-corner      {/* bottom of the scrollbar without resizse */}
+
+/* States */
+// :horizontal
+// :vertical
+// :decrement
+// :increment
+// :start
+// :end
+// :double-button
+// :single-button
+// :no-button
+// :corner-present
+// :window-inactive
+
+
+
+/*
+ * Firefox properties
+ */
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars
+{
+    scrollbar-color: #thumb #track | auto | dark | light;
+    scrollbar-width: thin | none | auto;
+}
+*/
+
+@mixin pharmacy-webkit-scrollbar() {
+    ::-webkit-scrollbar {
+        width:  5px;
+        height: 5px;
+    }
+
+    //::-webkit-scrollbar-thumb { background: $pharmacy-darker-grey-color; }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, rgba(153,156,166,0) 50%, rgba(153,156,166,1) 50%);
+    }
+    *:hover::-webkit-scrollbar-thumb {
+        background: linear-gradient(90deg, rgba(153,156,166,1) 50%, rgba(153,156,166,1) 50%);
+    }
+}
+
+@mixin pharmacy-firefox-scrollbar($color: $pharmacy-darker-grey-color transparent, $width: thin) {
+    scrollbar-width: $width;
+
+    @if $color != 0 {
+        scrollbar-color: $color;
+    }
+}
+
+
+
+@include media-breakpoint-up(xl) {
+    :root {
+        @include pharmacy-webkit-scrollbar;
+
+        * {
+            @include pharmacy-firefox-scrollbar;
+        }
+    }
+}

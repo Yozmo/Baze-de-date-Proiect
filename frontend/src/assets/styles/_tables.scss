@@ -1,0 +1,204 @@
+.like-mat-table {
+
+    // Base
+    .mat-row,
+    .mat-header-row,
+    .mat-footer-row {
+        display: flex;
+        align-items: center;
+        min-height: 56px;
+    }
+
+    .mat-cell,
+    .mat-footer-cell,
+    .mat-header-cell {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        word-wrap: break-word;
+        min-height: inherit;
+
+        &:first-of-type {
+            padding-left: 24px;
+        }
+        &:last-of-type {
+            padding-right: 24px;
+        }
+    }
+
+    // Variations
+    &.elevated {
+        .mat-row {
+            box-shadow: 0 3px 15px rgba(#ABB4C4, .15);
+        }
+    }
+
+}
+
+
+.mat-table, .like-mat-table {
+    background: transparent;
+
+    .mat-header-row {
+        border-bottom: none;
+    }
+
+    .mat-cell,
+    .mat-footer-cell,
+    .mat-header-cell {
+        font-size: 12px;
+        line-height: 16px;
+        //padding: 14px 8px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        // .mat-checkbox {
+        //     margin-left: 18px;
+        // }
+    }
+
+    .mat-row {
+        cursor: pointer;
+        border-bottom: none;
+        //border: 2px solid transparent;
+        margin-bottom: 4px;
+        min-height: 56px;
+        border-radius: $pharmacy-base-radius;
+        background-color: #fff;
+        box-shadow: 0 3px 15px rgba(171, 180, 196, .15);
+
+        &.disabled {
+            opacity: 1;
+
+            .mat-cell {
+                color: rgba($pharmacy-main-text-color, 0.5);
+
+                &.column-actions {
+                    color: rgba($pharmacy-main-text-color, 0.3);
+                }
+
+                .mat-checkbox {
+                    opacity: 0.35;
+                }
+            }
+        }
+
+        &:hover,
+        &:focus {
+            //background-color: #efefef;
+            background-color: rgba(#fff, 0.6);
+            //border-color: #a5a5a5;
+        }
+
+        .mat-cell {
+            color: $pharmacy-main-text-color;
+
+            &.status-cell {
+                font-weight: 600;
+                color: rgba($pharmacy-main-text-color, 0.75);
+
+                .label {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+
+        }
+    }
+
+    .column-actions {
+        max-width: 70px;
+        justify-content: center;
+    }
+
+    .col-icon-only {
+        max-width: 70px;
+        min-width: 70px;
+
+        &.mat-cell {
+            .mat-icon {
+                text-align: center;
+                font-size: 18px;
+                color: #AEB2BD; // TODO: color
+                display: block;
+                margin: 0 auto 0 10px;
+            }
+        }
+
+        .mat-sort-header-container {
+            justify-content: center;
+        }
+    }
+
+    .customer-name {
+        //font-size: 14px;
+        font-weight: bold;
+    }
+
+    .mat-sort-header-container {
+        width: 100%;
+    }
+
+    .mat-sort-header-button {
+        font: inherit;
+        text-transform: inherit;
+    }
+
+    .mat-sort-header-arrow {
+        color: inherit;
+    }
+}
+
+
+
+.mat-header-cell {
+    color: $pharmacy-main-grey-color;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.mat-column-action,
+.mat-column-selected {
+    max-width: 70px;
+}
+
+.mat-paginator {
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    color: $pharmacy-main-grey-color;
+}
+
+.mat-tab-group.mat-primary {
+    .mat-ink-bar {
+        background-color: $pharmacy-darker-grey-color;
+        height: 3px;
+        border-radius: 3px 3px 0 0;
+    }
+}
+
+// Table paginator
+.mat-form-field.mat-form-field-appearance-fill {
+    &.mat-paginator-page-size-select {
+        .mat-form-field-wrapper {
+            padding-bottom: 0;
+        }
+
+        .mat-form-field-flex {
+            background: transparent;
+            padding-top: 8px;
+        }
+
+        .mat-form-field-infix {
+            border: none;
+            padding-top: 0;
+            padding-bottom: 8px;
+
+            .mat-form-field-label-wrapper {
+                display: none;
+            }
+        }
+    }
+}

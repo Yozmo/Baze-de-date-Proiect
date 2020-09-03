@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700&display=swap');
+
+@import '~@angular/material/theming';
+
+@import 'variables';
+@import 'animations';
+
+$general-typography: mat-typography-config(
+    $font-family: "'Titillium Web', sans-serif"
+);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($general-typography);
+@include mat-core($general-typography);
+
+
+$pharmacy-theme-primary: mat-palette($md-pharmacymaincolor);
+$pharmacy-theme-accent: mat-palette($md-pharmacysecondarycolor, 500, A100, A400);
+
+$pharmacy-theme: mat-light-theme(
+    $pharmacy-theme-primary,
+    $pharmacy-theme-accent
+);
+
+@include angular-material-theme($pharmacy-theme);
+
+@import 'forms';
+@import 'mat-dialog';
+@import 'tables';
+
+
+.mat-card {
+    border-radius: $pharmacy-base-radius;
+
+    .mat-card-image {
+        border-radius: $pharmacy-base-radius $pharmacy-base-radius 0 0;
+    }
+}

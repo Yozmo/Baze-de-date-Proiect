@@ -1,0 +1,45 @@
+<div class="accounts-table">
+  <div class="table-toolbar">
+    <div class="group">
+      <button *ngIf="loggedUser.roles.includes('admin')" mat-raised-button (click)="createAccount()">
+        <mat-icon aria-hidden="false">add</mat-icon>
+        Adauga cont
+      </button>
+    </div>
+  </div>
+
+  <mat-table matSort [dataSource]="accounts$ | async">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nume </mat-header-cell>
+      <mat-cell *matCellDef="let account">{{account.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</mat-header-cell>
+      <mat-cell *matCellDef="let account">{{account.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="roles">
+      <mat-header-cell *matHeaderCellDef>Roluri</mat-header-cell>
+      <mat-cell *matCellDef="let account">{{account.roles.join(', ')}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef>Tara</mat-header-cell>
+      <mat-cell *matCellDef="let account">{{account.country}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="county">
+      <mat-header-cell *matHeaderCellDef>Judet</mat-header-cell>
+      <mat-cell *matCellDef="let account">{{account.county}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [class.disabled]="!row.enabled" (click)="loggedUser.roles.includes('admin') ? editAccount(row) : false"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+  <div class="loading-shade" *ngIf="isLoading">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </div>
+</div>

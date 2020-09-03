@@ -1,0 +1,42 @@
+<admin-tabs></admin-tabs>
+
+<div class="wrapper">
+  <div class="sidemenu">
+    <ng-container *ngIf="pharmacies$" >
+      <button *ngFor="let pharmacy of pharmacies$ | async" class="item" mat-button type="button" routerLinkActive="active" [routerLink]="['/admin', 'pharmacies', btoa(pharmacy.id)]">
+        {{ pharmacy.name }}
+      </button>
+    </ng-container>
+
+
+
+    <ng-container *ngIf="(pharmacy$ | async) as pharmacy">
+      <button class="item" mat-button type="button" routerLinkActive="active" [routerLink]="['/admin', 'pharmacies', pharmacy.id]">
+        {{ pharmacy.name }}
+      </button>
+    </ng-container>
+
+
+
+    <div class="buttons-wrapper ml-2 mt-2" *ngIf="loggedUser.roles.includes('admin')">
+      <div class="button-wrapper">
+        <button
+          mat-raised-button
+          class="add-button"
+          type="button"
+          (click)="createPharmacy()"
+        >
+          <mat-icon>add</mat-icon>
+          Adauga Farmacie
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

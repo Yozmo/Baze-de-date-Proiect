@@ -1,0 +1,51 @@
+[
+	{
+		"name": "Catena",
+		"pharmacyType": "COMMUNITY",
+		"supplierIds": [
+			1, 3, 5
+		]
+	},
+	{
+		"name": "Farmacia Dona",
+		"pharmacyType": "COMMUNITY",
+		"supplierIds": [
+			1, 3, 5, 2
+		]
+	},
+	{
+		"name": "Ecofarmacia",
+		"pharmacyType": "COMMUNITY",
+		"supplierIds": [
+			1, 3
+		]
+	},
+	{
+		"name": "Dr.Max",
+		"pharmacyType": "COMMUNITY",
+		"supplierIds": [
+			1, 2, 3, 4
+		]
+	},
+	{
+		"name": "Sensiblu",
+		"pharmacyType": "COMMUNITY",
+		"supplierIds": [
+			1, 3, 5, 2
+		]
+	},
+	{
+		"name": "Plafar SRL",
+		"pharmacyType": "NATURIST",
+		"supplierIds": [
+			1, 3, 5
+		]
+	},
+	{
+		"name": "Medifarm",
+		"pharmacyType": "COMMUNITY",
+		"supplierIds": [
+			1, 2, 3, 5
+		]
+	}
+]

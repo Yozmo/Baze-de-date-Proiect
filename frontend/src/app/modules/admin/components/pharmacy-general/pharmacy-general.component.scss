@@ -1,0 +1,63 @@
+@import 'variables';
+
+::ng-deep {
+  body {
+    padding-bottom: 0;
+  }
+
+  .sidemenu {
+    .item.active {
+      .mat-button-focus-overlay {
+        opacity: .04;
+      }
+    }
+  }
+
+}
+
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+
+
+
+.sidemenu {
+  background-color: darken($pharmacy-main-bg-color, 7%);
+  display: flex;
+  flex-flow: column;
+  min-width: 250px;
+
+  .item {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    line-height: 56px;
+    border-radius: 0;
+
+    &.active {
+      &::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-color: $pharmacy-main-bg-color;
+        transform: translateY(-50%) rotate(45deg);
+        position: absolute;
+        right: -25px;
+        top: 50%;
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+}

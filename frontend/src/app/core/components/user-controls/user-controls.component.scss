@@ -1,0 +1,55 @@
+@import 'variables';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+
+:host,
+button {
+  display: block;
+  width: 100%;
+  // @include media-breakpoint-up(md) {
+  //     height: 100%;
+  // }
+}
+
+button {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 16px;
+  mat-icon {
+    color: $pharmacy-main-grey-color;
+  }
+
+  &:hover {
+    background-color: rgba($pharmacy-main-text-color, .15);
+  }
+  span {
+    width: 100%;
+  }
+}
+
+mat-icon {
+  &.logout {
+    margin-left: 10px;
+  }
+  &.avatar {
+    margin-right: 5px;
+  }
+  &.edit {
+    margin-left: 10px;
+  }
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 980px)  {
+  button {
+    mat-icon {
+      color: #fff;
+      &.edit {
+        margin-left: 15px;
+      }
+    }
+  }
+
+}

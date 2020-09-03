@@ -1,0 +1,58 @@
+<div class="user-profile">
+  <form [formGroup]="accountForm" >
+    <div mat-dialog-title>
+      <h2 class="tile">Editare profil</h2>
+    </div>
+    <div mat-dialog-content>
+      <div class="row">
+        <div class="col-12 profile-image">
+                    <span>
+                        <figure>
+                            <img *ngIf="accountForm.get('profilePicture').value && accountForm.get('profilePicture').value != ''"
+                                 [src]="accountForm.get('profilePicture').value"  />
+                        </figure>
+                    </span>
+          <a mat-button class="file-input" color="primary">
+            <input id="cover-picture" type="file" accept="image/*" (change)="handleInputChange($event)">
+            Schimba imaginea
+          </a>
+        </div>
+        <div class="col-12">
+          <mat-form-field>
+            <input placeholder="Nume" matInput required formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field class="email-field">
+            <input placeholder="Email" readonly matInput value="{{data.email}}">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input placeholder="Tara" matInput required formControlName="country">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input placeholder="Judet" matInput required formControlName="county">
+          </mat-form-field>
+
+          <mat-form-field >
+            <input type="password" placeholder="Parolă" matInput formControlName="password">
+          </mat-form-field>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button type="button" color="primary" (click)="onClick(accountForm.value)"
+              [disabled]="!accountForm.valid">
+        Salvează
+      </button>
+      <button mat-raised-button type="button" (click)="onClick()">
+        Renunta
+      </button>
+    </div>
+  </form>
+</div>

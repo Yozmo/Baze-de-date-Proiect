@@ -1,0 +1,69 @@
+@import 'variables';
+
+:host {
+  max-width: 500px;
+}
+.user-profile {
+  width: 100%;
+  .mat-dialog-content {
+    overflow-x: hidden;
+  }
+}
+::ng-deep {
+  .user-profile {
+    .cdk-overlay-container {
+      .cdk-global-overlay-wrapper {
+        .cdk-overlay-pane {
+          max-width: unset;
+          width: auto;
+        }
+      }
+    }
+    .mat-dialog-container {
+      overflow-x: hidden;
+      overflow-y:auto;
+      background-color: red;
+
+    }
+  }
+}
+
+.profile-image {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  span {
+    align-self: center;
+  }
+}
+
+
+
+
+
+
+.email-field {
+  color: $pharmacy-main-grey-color;
+}
+
+img {
+  object-fit: cover;
+  border-radius:50%;
+  width: 200px;
+  height: 200px;
+}
+
+.file-input {
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+
+  input {
+    opacity: 0;
+    position: absolute;
+    transform: scale(2);
+    z-index: 6;
+    cursor: pointer;
+  }
+}

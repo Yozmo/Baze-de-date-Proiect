@@ -1,0 +1,43 @@
+@import "variables";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+:host {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+}
+
+.page-header {
+  h1 {
+    padding-bottom: 0;
+  }
+  .actions {
+    white-space: nowrap;
+    display: flow-root;
+    flex-flow: column;
+    align-items: flex-end;
+  }
+}
+
+.table-scroll {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 10px;
+
+  .mat-table {
+    .mat-header-row {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background-color: $pharmacy-main-bg-color;
+    }
+  }
+}
+
+.entity-col {
+  @include media-breakpoint-down(xxl) {
+    flex: 40%;
+    min-width: 40%;
+  }
+}

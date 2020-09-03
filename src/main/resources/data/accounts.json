@@ -1,0 +1,10 @@
+[
+	{
+		"email": "admin@pharmacy.ro",
+		"name": "Admin",
+		"password": "admin",
+		"roles": ["admin"],
+		"country": "Romania",
+		"county": "Brasov"
+	}
+]

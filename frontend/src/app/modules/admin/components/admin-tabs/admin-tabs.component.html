@@ -1,0 +1,10 @@
+<div class="tabs-bar" [ngClass]="{vertical: display == 'vertical'}">
+  <button mat-button type="button"
+          *ngFor="let tab of tabs; let i = index"
+          [routerLink]="tab?.routerLink"
+          [queryParams]="tab?.queryParams"
+          routerLinkActive="active"
+  >
+    {{ tab.name }}
+  </button>
+</div>

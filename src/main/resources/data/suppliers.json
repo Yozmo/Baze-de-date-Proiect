@@ -1,0 +1,75 @@
+[
+	{
+		"drugIds": [
+			1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 16, 17, 18, 19
+		],
+		"email": "abbvie@gmail.com",
+		"name": "ABBVIE",
+		"phone": "0743 004 063",
+		"country": "Romania",
+		"city": "Brasov",
+		"county": "Brasov",
+		"street": "Calea Bucuresti 12"
+	},
+	{
+		"drugIds": [
+			1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+		],
+		"email": "sanofi@gmail.com",
+		"name": "SANOFI",
+		"phone": "0740 828 441",
+		"country": "Romania",
+		"city": "Brasov",
+		"county": "Brasov",
+		"street": "Calea Bucuresti 27"
+	},
+	{
+		"drugIds": [
+			1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+		],
+		"email": "servier@gmail.com",
+		"name": "SERVIER",
+		"phone": "0741 106 320",
+		"country": "Romania",
+		"city": "Brasov",
+		"county": "Brasov",
+		"street": "Bulevardul Garii 7"
+	},
+	{
+		"drugIds": [
+			1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15
+		],
+		"email": "novartis@yahoo.com",
+		"name": "NOVARTIS",
+		"phone": "0741 106 842",
+		"country": "Romania",
+		"city": "Bucuresti",
+		"county": "Ilfov",
+		"street": "Bulevardul Biruintei 12"
+	},
+	{
+		"drugIds": [
+			1, 7, 8, 9, 10, 15, 16, 17, 18, 19
+		],
+		"email": "pfizer@gmail.com",
+		"name": "PFIZER",
+		"phone": "0372 407 041",
+		"country": "Romania",
+		"city": "Bucuresti",
+		"county": "Ilfov",
+		"street": "Soseaua Cernica"
+	},
+	{
+		"drugIds": [
+			1, 16, 17, 18, 19, 4
+		],
+		"email": "sun_pharma@yahoo.com",
+		"name": "SUN PHARMA",
+		"phone": "0730 711 644",
+		"country": "Romania",
+		"city": "Cluj-Napoca",
+		"county": "Cluj-Napoca",
+		"street": "Strada Muresului"
+		
+	}
+]

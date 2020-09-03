@@ -1,0 +1,72 @@
+@import 'variables';
+
+.table-toolbar {
+  margin-right: calc(-1 * #{$pharmacy-base-padding} / 4);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin: 0 calc(#{$pharmacy-base-padding} / 4);
+  }
+}
+
+.mat-table {
+  background: transparent;
+
+  .mat-header-row {
+    border-bottom: none;
+
+    .mat-header-cell:not(.mat-column-selected) {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+
+  .mat-row {
+    border-bottom: none;
+    margin-bottom: 2px;
+    min-height: 56px;
+    border-radius: $pharmacy-base-radius;
+
+    .mat-cell:not(.mat-column-selected) {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+
+    &:hover {
+      background-color: $pharmacy-main-bg-color;
+      cursor: pointer;
+    }
+
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+    &:nth-child(odd) {
+      background-color: rgba(#fff, 0.7);
+    }
+  }
+}
+
+.mat-header-cell {
+  color: $pharmacy-main-grey-color;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.mat-paginator {
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  color: $pharmacy-main-grey-color;
+}
+
+.mat-column-enabled {
+  max-width: 80px;
+}
+
+.mat-column-action,
+.mat-column-selected {
+  max-width: 70px;
+}

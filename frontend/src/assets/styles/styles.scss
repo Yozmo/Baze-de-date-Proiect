@@ -1,0 +1,1070 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+* {
+    //user-select: none;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    background-color: $pharmacy-main-bg-color;
+    color: $pharmacy-main-text-color;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@import 'scrollbar';
+
+.main-toolbar {
+    justify-content: space-between;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    position: static;
+    z-index: 20;
+
+    &.mat-toolbar-single-row {
+        padding-right: 0;
+    }
+
+    .branding {
+        height: 58%;
+
+        .logo {
+            //width: 136px;
+            display: block;
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &.mat-primary {
+        max-width: 100%;
+        background-color: $pharmacy-main-color;
+        box-shadow: 3px 0 15px rgba($pharmacy-main-text-color, .22);
+        position: relative;
+
+        @include media-breakpoint-down(xxl) {
+            height: 50px;
+        }
+    }
+
+    button {
+        color: inherit;
+        text-decoration: none;
+        border-radius: 0;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    .menu-items {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        app-nav-item {
+            height: 100%;
+
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding: 0 30px;
+                border-radius: 0;
+
+                span {
+                    color: inherit;
+                    font-weight: bold;
+                }
+
+                .mat-button {
+                    font-size: inherit;
+                }
+            }
+
+            a.active {
+                background-color: rgba($pharmacy-main-text-color, .25);
+                color: inherit;
+            }
+
+            a:hover:not(.active) {
+                background-color: rgba($pharmacy-main-text-color, .15);
+            }
+        }
+
+        .footer-area {display: none;}
+    }
+
+    .burger-menu-toggle.mat-button {
+        display: none;
+    }
+
+    app-user-controls.mobile {display: none;}
+    app-user-controls.desktop {display: block;}
+}
+
+
+@media only screen
+    and (min-width: 320px)
+    and (max-width: 980px)  {
+
+    .main-toolbar.mat-primary {
+        font-size: 14px;
+        flex-flow: row-reverse;
+        padding-left: 0;
+        padding-right: 16px;
+
+        .burger-menu-toggle.mat-button {
+            display: block;
+            height: 100%;
+        }
+
+        app-user-controls.mobile {display: block;}
+        app-user-controls.desktop {display: none;}
+
+        .menu-items {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            opacity: 1;
+            height: calc(100vh - 50px);
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: $pharmacy-main-color;
+            box-shadow: 3px 0 15px rgba($pharmacy-main-text-color, .22);
+            flex-flow: column;
+            align-items: flex-start;
+            transition: all ease-in-out .15s;
+
+            &:not(.show-menu) {
+                //display: none;
+                left: -100%;
+                opacity: 0;
+            }
+
+            app-nav-item {
+                width: 100%;
+                height: auto;
+
+                a {
+                    display: block;
+                    height: auto;
+                    text-align: left;
+                    padding: 0 16px;
+                }
+            }
+            .user-actions {
+                height: auto;
+            }
+            .footer-area {
+                display: block;
+                margin-top: auto;
+                padding: 16px;
+
+                .widget {
+                    margin-top: 16px;
+
+                    &.contact {
+                        h4 {
+                            font-size: inherit;
+                            font-weight: 600;
+                        }
+                        p {
+                            margin: 0;
+                            line-height: normal;
+                            font-weight: normal;
+                        }
+                    }
+
+                    &.social {
+                        margin-left: -16px;
+                    }
+                }
+            }
+        }
+
+        // .sidenav-backdrop {
+        //     position: absolute;
+        //     top: 50px;
+        //     left: 0;
+        //     right: 0;
+        //     height: calc(100vh - 50px);
+        //     opacity: 1;
+        //     background-color: rgba(0,0,0, 0.1);
+        //     z-index: -1;
+        // }
+    }
+}
+
+/* .container {
+    position: relative;
+    padding: 0 $pharmacy-base-padding;
+} */
+
+
+
+@include media-breakpoint-down(md) {
+    district-situation {
+
+                    .main-header-district {
+                        width:100%;
+                        height: 100%;
+                        align-self: flex-start;
+                    }
+    }
+    requests-situation, district-situation{
+        .main-container{
+            .grafics-dashboard {
+                .page-header {
+                    box-shadow: 0px 3px 15px 15px rgba(171, 180, 196, 0.15);
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    height: 70px;
+                    background-color: #fff;
+                    display: flex;
+                    flex-direction: column;
+                    .main-header {
+                        width:100%;
+                        height: 50%;
+                        align-self: flex-start;
+                    }
+                    .main-header-district {
+                        width:100%;
+                        height: 100%;
+                        align-self: flex-start;
+                    }
+                    .title-back {
+                        h1{
+                            font-size: 14px !important;
+                            margin: 10px 8px 0;
+                            padding:0;
+                            justify-self: center;
+                            line-height: 25px;
+                        }
+                        .range-period {
+                            font-size: 14px;
+                            margin-top:0;
+                            padding-top:0;
+                        }
+                        .date-picker {
+                            width:100%;
+                            display: flex;
+                            justify-content: flex-end;
+                            margin-bottom: 5px;
+                            padding: 0;
+                        }
+                    }
+                    .select-region {
+                        height: 50%;
+                        align-self: flex-end;
+                        line-height: 30px;
+                        mat-form-field {
+
+                            line-height:30px;
+                        }
+                    }
+
+                }
+                .bar-title {
+                    button {
+                        min-width: 20px;
+                        padding:0;
+                        margin:0;
+                    }
+                }
+
+
+
+            }
+        }
+    }
+
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+        padding: 19px 0;
+    }
+
+    .flex-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+
+    @include media-breakpoint-down(md) {
+        h1 {
+            font-size: 20px;
+        }
+    }
+}
+
+.page-footer {
+    margin: 50px -10px 20px;
+
+    button {
+        margin: 10px;
+    }
+}
+
+.page-back-button.mat-icon-button {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 0;
+    color: $pharmacy-darker-grey-color;
+}
+
+.roof-card.disabled {
+    opacity: $pharmacy-disabled-opacity;
+
+    mat-card {
+        cursor: not-allowed !important;
+    }
+}
+
+.subsection-title {
+    text-transform: uppercase;
+}
+
+.disabled {
+    opacity: $pharmacy-disabled-opacity;
+}
+
+
+section {
+    header {
+        h3 {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        h3.primary {
+            color: $pharmacy-secondary-color;
+        }
+    }
+}
+
+.tabs-bar {
+    background-color: #fcfcfd; // TODO: color
+    box-shadow: 3px 0 10px rgba(#E6E9EF, 0.9);
+    position: relative;
+
+    button {
+        height: 54px; // TODO: Subtract from base height
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 0 10px;
+        color: $pharmacy-darker-grey-color;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        outline: none;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &::after {
+            content: "";
+            height: 3px;
+            background-color: $pharmacy-darker-grey-color;
+            border-radius: $pharmacy-base-radius $pharmacy-base-radius 0 0;
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        &.active::after {
+            //animation: .15s ease-out 0s 1 zoomIn;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .badge {
+            vertical-align: unset;
+            border-radius: 30px;
+            //background-color: rgba(#AEB2BD, 0.2);
+            padding: 0 5px;
+            margin-left: 5px;
+        }
+    }
+}
+
+
+.side-panel {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E6EA;
+    // padding: 15px $pharmacy-sidepanel-padding;
+    height: 100%;
+    // overflow-y: auto;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mat-expansion-panel {
+        margin-left: (-$pharmacy-sidepanel-padding);
+        margin-right: (-$pharmacy-sidepanel-padding);
+        border-radius: 0 !important;
+        box-shadow: none;
+        color: $pharmacy-main-text-color;
+
+        .mat-expansion-panel-header {
+            border-bottom: 1px solid rgba(#AEB2BD, 0.24);
+            padding: 0 $pharmacy-sidepanel-padding;
+
+            .mat-expansion-indicator::after {
+                color: rgba(#AEB2BD, .62);
+            }
+        }
+
+        .mat-expansion-panel-header-title {
+            color: $pharmacy-secondary-color;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+            }
+        }
+
+        .mat-expansion-panel-content {
+            padding-top: 15px;
+
+            .mat-expansion-panel-body {
+                padding-left: $pharmacy-sidepanel-padding;
+                padding-right: $pharmacy-sidepanel-padding;
+            }
+
+            .mat-form-field:last-of-type {
+                .mat-form-field-wrapper {
+                    margin-bottom: -1.25em;
+                }
+            }
+        }
+    }
+
+    .mat-form-field {
+        display: inline;
+
+        .mat-form-field-infix {
+            width: 100%;
+        }
+
+        // .input-icon {
+        //     position: relative;
+        //     top: 7px;
+        //     margin-right: 5px;
+        //     opacity: .3;
+        // }
+        // .mat-input-element {
+        //     font-weight: 600;
+        // }
+    }
+
+    // .radio-group {
+    //     .mat-radio-button + .mat-radio-button {
+    //         margin-left: 15px;
+    //     }
+    // }
+
+    fieldset {
+        + fieldset {
+            margin-top: 30px;
+        }
+        .fieldset-label {
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+    }
+}
+
+.mat-autocomplete-panel {
+    .mat-option.multiple-rows {
+        white-space: normal;
+        line-height: normal;
+        height: auto;
+        padding-top:    10px;
+        padding-bottom: 10px;
+
+        .mat-option-text .field {
+            display: block;
+            font-size: 14px;
+
+            &:not(.label) {
+                opacity: 0.8;
+            }
+
+            &.label {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.rendering-area {
+    background-color: rgba(#fff, .70);
+    border-left: 1px solid #E5E6EA;
+
+    // &, & .toolbar {
+    //     box-shadow: 0 0 15px rgba(#E6E9EF, .90);
+    // }
+
+    .toolbar {
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        border-bottom: 1px solid #E5E6EA;
+    }
+}
+
+.status-btn .badge,
+.status-cell .label {
+    position: relative;
+
+    &::after {
+        content: "";
+        background-color: currentColor;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 30px;
+        opacity: 0.2;
+    }
+}
+
+
+
+.container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.wrapper-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .revert-img-button {
+        margin-bottom: 20px;
+    }
+    .row {
+        margin: 0;
+        .cover-img {
+            width: 60%;
+            margin: 10px 0;
+        }
+    }
+}
+
+.wrapper-label{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+}
+
+.mat-form-field-wrapper {
+    .mat-input-element  {
+        line-height: 20px;
+        @include media-breakpoint-down(md) {
+            font-size: 14px;
+        }
+    }
+}
+
+.shade-group-header {
+    label{
+        line-height: 18px;
+    }
+}
+
+
+
+
+.filter-panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+
+
+    .filters {
+        padding: 15px $pharmacy-sidepanel-padding;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        flex: 1;
+        max-width: 240px;
+        min-width: 240px;
+        transition: all ease-in-out .15s;
+
+        &.side-bar-collapsed {
+            opacity: 0;
+            max-width: 0;
+            min-width: 0;
+        }
+        .mat-form-field-label {
+            line-height: 20px;
+        }
+    }
+
+    .buttons-wrapper {
+        overflow: hidden;
+        justify-self: flex-end;
+        background-color: #fff;
+        padding-top: 20px;
+    }
+
+    // .side-bar-collapsed {
+    //     form {
+    //         display: none;
+    //     }
+    // }
+
+    .collapse-button {
+        width: 100%;
+        min-width: auto;
+        color: $pharmacy-main-grey-color;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        align-self: flex-start;
+
+        .collapse-icon {
+            font-size: 30px;
+            margin-left: 20px;
+            position: relative;
+            top: 2px;
+        }
+        .collapse-text {
+            font-size: 16px;
+            padding-left: 10px;
+            color: $pharmacy-darker-grey-color;
+        }
+    }
+
+    .side-bar-collapsed ~ .button-wrapper {
+        height: calc(100% + 15px);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        overflow: hidden;
+        bottom: 0;
+
+        .collapse-button {
+            width: 40px;
+            text-align: center;
+
+            .collapse-icon {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        background-color: #fff;
+
+        .add-button {
+            width: 100%;
+            margin: 0 10px;
+            align-self: center;
+        }
+    }
+
+    .add-icon {
+        bottom: 0;
+        width: 35px;
+        padding: 0;
+        margin: 0 10px;
+        min-width: auto;
+
+        mat-icon {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.mat-prd-calendar-container {
+    min-height: 330px !important;
+}
+// .summary-wrapper {
+//     width: 100px;
+//     position: absolute;
+//     bottom: 0;
+// }
+
+
+
+  .sidemenu::ng-deep {
+    .item.active {
+      .mat-button-focus-overlay {
+        opacity: .04;
+      }
+    }
+  }
+
+
+.wrapper {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+.sidemenu {
+  background-color: darken($pharmacy-main-bg-color, 7%);
+  display: flex;
+  flex-flow: column;
+  flex: 0 0 250px;
+  height: 100%;
+  overflow-y: auto;
+
+  .item {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    border-radius: 0;
+    //line-height: 56px;
+    flex: 1;
+    max-height: 56px;
+
+    &.active {
+      &::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-color: $pharmacy-main-bg-color;
+        transform: translateY(-50%) rotate(45deg);
+        position: absolute;
+        right: -25px;
+        top: 50%;
+      }
+    }
+
+    &::ng-deep {
+      .mat-button-wrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+
+// ELEMENT-DIALOG-IMG
+.element-cover {
+    text-align: center;
+
+    .thumbnail {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+
+        img {
+            width: 100px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    button.has-thumbnail {
+        margin: 10px auto 0;
+        padding-top: 10px;
+    }
+}
+
+.mat-dialog-actions {
+    margin-top: 30px;
+    justify-content: flex-end;
+}
+
+// MENU ITEMS
+
+
+.language-avatar {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 40px;
+    width: auto;
+    padding: 0 16px 0 0;
+    .language-info {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 40px;
+        margin-right: 40px;
+
+        .language-select {
+            width: 50px;
+            padding-top: 8px;
+            ::ng-deep {
+                img {
+                    object-fit: cover;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+            .language-img-bar {
+                object-fit: cover;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                vertical-align: text-top;
+                margin-bottom: 5px;
+                margin-right: 5px;
+            }
+
+        }
+        .mat-form-field-appearance-legacy .mat-form-field-infix {
+            padding: 0;
+            border: 0;
+        }
+    }
+
+    .avatar-info {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-right: 10px;
+        height: 40px;
+
+        .user-image {
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            .menu-toggle {
+                object-fit: cover;
+                border-radius:50%;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+}
+
+// INCREMENT- DECREMENT BUTTONS
+.input-number-buttons {
+    width: 160px;
+    height: 35px;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-content: center;
+    border: 1px solid rgba($pharmacy-main-text-color, .22);
+    border-radius: 3px;
+    z-index: 4;
+    bottom: -12px;
+    left: 0;
+
+    mat-icon {
+        color: $pharmacy-main-color;
+        vertical-align: sub !important;
+    }
+
+    button {
+        width: 35px;
+        height: 34px;
+        align-self: center;
+        border-radius: 3px;
+    }
+    .minus-button {
+        border-right: 1px solid rgba($pharmacy-main-text-color, .22);
+
+    }
+    .plus-button {
+        border-left: 1px solid rgba($pharmacy-main-text-color, .22);
+    }
+
+}
+
+.mat-simple-snackbar {
+    span {
+        font-size: 16px;
+    }
+}
+.mat-snack-bar-container {
+    background-color: $pharmacy-main-color;
+    color: #fff;
+    font-size: 18px;
+    width: 70vw;
+}
+
+.mat-simple-snackbar-action {
+    button {
+        background-color: #fff;
+        color: $pharmacy-main-color;
+        font-size: 16px;
+    }
+}
+@media only screen
+    and (min-width: 320px)
+    and (max-width: 1024px)  {
+        .main-toolbar.mat-primary {
+            flex-direction: row ;
+        }
+        .branding {
+            order: 4;
+        }
+
+        .user-avatar-mobile {
+            order: 0;
+            mat-icon {
+                display: none;
+            }
+        }
+        .user-mobile-menu {
+            display: none;
+            order: 3;
+        }
+
+        .language-avatar {
+            width: 260px;
+            padding: 0;
+            position: absolute;
+            right: 120px;
+            // justify-content: flex-start;
+            // flex-direction: row-reverse;
+            .avatar-info {
+                margin:0;
+            }
+        }
+    }
+    @media only screen
+    and (min-width: 300px)
+    and (max-width: 600px) {
+        .language-avatar {
+            width: 200px;
+        }
+        .avatar-info {
+            .user-avatar-mobile {
+                max-width: 65px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 10px;
+            }
+        }
+    }
+    // @media only screen
+    // and (min-width: 1024px)
+    // and (max-width: 1200px) {
+    //     .avatar-info {
+    //         .user-avatar-mobile {
+    //             // max-width: 95px;
+    //             // white-space: nowrap;
+    //             // overflow: hidden;
+    //             // text-overflow: ellipsis;
+    //             // margin-right: 10px;
+    //         }
+    //     }
+    // }
+    @media only screen
+        and (min-width: 200px)
+        and (max-width: 360px) {
+
+            .language-avatar {
+                width: auto;
+            }
+            .avatar-info {
+                button {
+                    display: none;
+                }
+            }
+            .input-number-buttons {
+                width: 90px;
+            }
+        }
+    // @media only screen
+    // and (min-width: 980px)
+    // and (max-width: 3100px)  {
+    //     .language-avatar .language-info {
+    //         position: absolute;
+    //         left: 150px;
+    //     }
+
+    // }
+    .menu-options {
+        list-style: none;
+        padding: 10px 0;
+        z-index: 1;
+
+        .menu-option {
+          font-weight: 500;
+          z-index: 1;
+          font-size: 14px;
+          padding: 10px 40px 10px 20px;
+          font-weight: bold;
+          // border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.5);
+          }
+
+
+        }
+    }
+
+// ELIMINATE ARROWS ON MOZILLA FIREFOX
+input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+
+
+    .panel-width {
+        min-width: calc(100% + 170px) !important;
+}

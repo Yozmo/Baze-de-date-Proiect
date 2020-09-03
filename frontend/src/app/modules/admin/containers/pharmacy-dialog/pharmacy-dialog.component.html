@@ -1,0 +1,41 @@
+<form [formGroup]="pharmacyForm">
+  <div mat-dialog-title>
+    <h2 class="title">{{ title }}</h2>
+  </div>
+
+  <div mat-dialog-content class="pharmacy-table">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field>
+          <input matInput placeholder="Nume" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Tip farmacie</mat-label>
+          <mat-select formControlName="pharmacyType">
+            <mat-option *ngFor="let type of pharmacyTypes" [value]="type">
+              {{ displayFormatterType(type) }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Furnizor(i)</mat-label>
+          <mat-select formControlName="supplierIds" multiple [compareWith]="compareObjects">
+              <mat-option *ngFor="let supplier of supplierList" [value]="supplier.id">
+                {{ supplier.name }}
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onClick(pharmacyForm.value)" [disabled]="!pharmacyForm.valid">
+      Salveaza
+    </button>
+    <button mat-raised-button (click)="onClick()">Renunta</button>
+  </div>
+</form>
+

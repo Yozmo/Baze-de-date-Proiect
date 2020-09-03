@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'animations';
+
+:host.second-level-tabs {
+  .tabs-bar {
+    margin: 20px 0;
+    border-bottom: 1px solid darken($pharmacy-main-bg-color, 10%);
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+  }
+}
+
+
+
+.vertical {
+  display: inline-grid;
+}

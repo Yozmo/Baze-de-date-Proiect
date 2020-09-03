@@ -1,0 +1,46 @@
+<div class="accounts-table">
+  <div class="table-toolbar">
+
+    <div class="group">
+      <button mat-raised-button (click)="createDrug()">
+        <mat-icon aria-hidden="false">add</mat-icon>
+        Adauga medicament
+      </button>
+    </div>
+  </div>
+
+  <mat-table matSort [dataSource]="drugs$ | async">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nume </mat-header-cell>
+      <mat-cell *matCellDef="let drug">{{drug.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Cantitate</mat-header-cell>
+      <mat-cell *matCellDef="let drug">{{drug.quantity}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="strength">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Concentratie</mat-header-cell>
+      <mat-cell *matCellDef="let drug">{{drug.strength}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef>Pret</mat-header-cell>
+      <mat-cell *matCellDef="let drug">{{drug.price}} lei</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef>Descriere</mat-header-cell>
+      <mat-cell *matCellDef="let drug">{{drug.description}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [class.disabled]="!row.enabled" (click)="editDrug(row)"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+  <div class="loading-shade" *ngIf="isLoading">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </div>
+</div>

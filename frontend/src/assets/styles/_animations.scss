@@ -1,0 +1,39 @@
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes revealIn {
+    0% {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        opacity: 0;
+        margin-top: 0;
+        transform: translateY(-50px);
+    }
+    30% {
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        max-height: 1000px;
+        margin-top: 30px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0%   {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

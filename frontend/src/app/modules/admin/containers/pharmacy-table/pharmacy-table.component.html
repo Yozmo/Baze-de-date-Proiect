@@ -1,0 +1,54 @@
+<div class="accessory-table">
+  <div class="table-toolbar">
+    <div class="group">
+      <div class="action-buttons">
+        <button mat-raised-button (click)="createCenter()">
+          <mat-icon aria-hidden="false">add</mat-icon>
+          Adauga centru
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <mat-table matSort [dataSource]="centers$ | async">
+    <ng-container matColumnDef="city">
+      <mat-header-cell class="name"  *matHeaderCellDef mat-sort-header>Oras</mat-header-cell>
+      <mat-cell class="name name-cell" *matCellDef="let center">{{center.city}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="county">
+      <mat-header-cell class="key" *matHeaderCellDef mat-sort-header>Judet</mat-header-cell>
+      <mat-cell class="key" *matCellDef="let center">{{center.county}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell class="name" *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+      <mat-cell class="name" *matCellDef="let center">{{center.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <mat-header-cell class="key" *matHeaderCellDef mat-sort-header>Telefon</mat-header-cell>
+      <mat-cell class="key" *matCellDef="let center">{{center.phone}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="street">
+      <mat-header-cell class="key" *matHeaderCellDef mat-sort-header>Strada</mat-header-cell>
+      <mat-cell class="key" *matCellDef="let center">{{center.street}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="postalCode">
+      <mat-header-cell class="default" *matHeaderCellDef>Cod postal</mat-header-cell>
+      <mat-cell class="default default-ellipsis "  *matCellDef="let center">{{center.postalCode}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editCenter(row)"
+             [class.disabled]="!row.enabled"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+
+  <div class="loading-shade" *ngIf="isLoading">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </div>
+</div>

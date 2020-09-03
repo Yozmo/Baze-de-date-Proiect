@@ -1,0 +1,87 @@
+<form [formGroup]="accountForm">
+  <div mat-dialog-title>
+    <h2 class="tile">Membru</h2>
+  </div>
+  <div mat-dialog-content>
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <input
+            placeholder="Nume"
+            matInput
+            required
+            formControlName="name"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            placeholder="E-mail"
+            matInput
+            required
+            formControlName="email"
+          >
+        </mat-form-field>
+        <div class="mat-form-group">
+          <mat-form-field>
+            <input
+              type="password"
+              placeholder="Parola"
+              matInput
+              required
+              formControlName="password"
+            >
+          </mat-form-field>
+        </div>
+        <div formGroupName="roles">
+          <div class="mat-form-field-wrapper">
+            <input
+              matInput
+              placeholder="Rol"
+              disabled
+              class="group-label"
+            >
+            <div class="inline-checkboxes">
+              <mat-checkbox formControlName="admin">Administrator</mat-checkbox>
+              <mat-checkbox formControlName="customer">Client</mat-checkbox>
+            </div>
+          </div>
+        </div>
+        <mat-form-field>
+          <input
+            placeholder="Tara"
+            matInput
+            required
+            formControlName="country"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            placeholder="Judet"
+            matInput
+            required
+            formControlName="county"
+          >
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      type="button"
+      color="primary"
+      (click)="onClick(accountForm.value)"
+      cdkFocusInitial
+      [disabled]="!accountForm.valid"
+    >
+      Salveaza
+    </button>
+    <button
+      mat-raised-button
+      type="button"
+      (click)="onClick()"
+    >
+      Renunta
+    </button>
+  </div>
+</form>

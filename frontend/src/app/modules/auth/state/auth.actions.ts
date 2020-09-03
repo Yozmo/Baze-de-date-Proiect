@@ -1,0 +1,23 @@
+import { createAction, props } from '@ngrx/store';
+import { Credentials, OAuth2AccessToken } from '../models';
+import {Account} from "../../../api/models";
+
+export const login = createAction('[Login Page] Login', props<{ credentials: Credentials }>());
+export const loginSuccess = createAction('[Auth/API] Login Success', props<{ oAuth2AccessToken: OAuth2AccessToken, credentials: Credentials }>());
+export const loginFailure = createAction('[Auth/API] Login Failure', props<{ error: any }>());
+export const refreshToken = createAction('[Interceptor] Refresh Token');
+export const refreshTokenSuccess = createAction('[Auth/API] Refresh Token Success', props<{ oAuth2AccessToken: OAuth2AccessToken }>());
+export const loginRedirect = createAction('[Auth/API] Login Redirect');
+export const logout = createAction('[Auth] Logout');
+export const logoutConfirmation = createAction('[Auth] Logout Confirmation');
+export const logoutConfirmationDismiss = createAction('[Auth] Logout Confirmation Dismiss');
+export const getLoggedUser = createAction('[Auth] Get Logged User');
+export const getLoggedUserSuccess = createAction('[Auth] Get Logged User Success', props<{ user: Account }>());
+export const getLoggedUserFailure = createAction('[Auth] Get Logged User Failure', props<{ error: any }>());
+export const reloadToken = createAction('[Auth] Reload token');
+export const resetPassword = createAction('[Login Page] Reset Password', props<{ email: string }>());
+export const resetPasswordSuccess = createAction('[Login Page] Reset Password Success');
+export const resetPasswordFailure = createAction('[Login Page] Reset Password Failure');
+export const updateAccount = createAction('[Login Page] Update Account', props<{ account: Account }>());
+export const updateAccountSuccess = createAction('[Login Page] Update Account Success', props<{ account: Account }>());
+export const updateAccountFailure = createAction('[Login Page] Update Account Failure', props<{ error: any }>());

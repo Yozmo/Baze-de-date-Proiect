@@ -1,0 +1,58 @@
+<form [formGroup]="centerForm">
+  <div mat-dialog-title>
+    <h2 class="title">{{ title }}</h2>
+  </div>
+
+  <div mat-dialog-content class="centers-table">
+    <div class="row">
+      <div class="col-6 info">
+        <mat-form-field>
+          <input matInput placeholder="Oras" formControlName="city">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Judet" formControlName="county">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Telefon" formControlName="phone">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Strada" formControlName="street">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Cod postal" formControlName="postalCode">
+        </mat-form-field>
+
+      </div>
+
+      <div class="col-6 element-cover" *ngIf="data.center.id">
+        <mat-table matSort [dataSource]="stocks$ | async">
+          <ng-container matColumnDef="nameOfStock">
+            <mat-header-cell class="name"  *matHeaderCellDef mat-sort-header>Stock</mat-header-cell>
+            <mat-cell class="name name-cell" *matCellDef="let stock">{{stock.nameOfStock}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="totalQuantity">
+            <mat-header-cell class="key" *matHeaderCellDef mat-sort-header>Cantitate</mat-header-cell>
+            <mat-cell class="key" *matCellDef="let stock">{{stock.totalQuantity}}</mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+      </div>
+
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onClick(centerForm.value)" [disabled]="!centerForm.valid">
+      Salveaza
+    </button>
+    <button mat-raised-button (click)="onClick()">Renunta</button>
+  </div>
+</form>
+
