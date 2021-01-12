@@ -18,7 +18,7 @@ public interface DrugRepository extends JpaRepository<Drug, Long> {
 	@Query(value = "SELECT d FROM Drug d WHERE d.id IN (:drugIds)")
 	List<Drug> getDrugsByIds(@Param("drugIds") List<Long> drugIds);
 	
-	@Query(value = "SELECT countdrugs()", nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM drug", nativeQuery = true)
 	long countData();
 
 }
