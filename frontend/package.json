@@ -34,7 +34,7 @@
     "@types/stats.js": "^0.17.0",
     "bootstrap": "^4.4.1",
     "file-saver": "^2.0.2",
-    "immer": "^5.0.0",
+    "immer": "^5.2.1",
     "mat-select-filter": "^2.3.6",
     "ngrx-store-freeze": "^0.2.4",
     "ngrx-store-localstorage": "^8.0.0",
