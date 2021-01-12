@@ -24,6 +24,7 @@ unei farmacii.
         password: customer
   
   * pentru a pornii aplicatia:
+    - username / password pentru postgresql se gasesc si se pot modifica in src/resources/database.properties
     - se porneste serverul de backend
     - presupune a avea o versiune de node instalata. https://nodejs.org/en/
     - npm install -g @angular/cli 
